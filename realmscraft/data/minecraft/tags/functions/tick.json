@@ -1,0 +1,9 @@
+{
+	"values": [
+		"spells:spell",
+		"func:cooldown",
+		"func:effects",
+		"bossbar:loop"
+
+	]
+}

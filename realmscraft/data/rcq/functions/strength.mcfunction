@@ -1,0 +1,1 @@
+effect give @s minecraft:strength 999999 255 true

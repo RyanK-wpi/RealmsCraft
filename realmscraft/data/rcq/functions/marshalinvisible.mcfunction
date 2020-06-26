@@ -1,0 +1,1 @@
+effect give @a[team=marshals] minecraft:invisibility 999999 0 true

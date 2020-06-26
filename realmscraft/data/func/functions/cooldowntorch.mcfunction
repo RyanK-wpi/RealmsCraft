@@ -1,0 +1,1 @@
+execute at @s[scores={cooldownTorch=1..19}] run fill ~-2 ~0 ~-2 ~2 ~6 ~2 air replace torch
