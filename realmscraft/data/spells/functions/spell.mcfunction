@@ -14,6 +14,8 @@ execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_st
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Divine Aid\""}}}}] run function spells:seeraid
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Vision\""}}}}] run function spells:seervision
 
+execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Raise Dead\""}}}}] at @s positioned ~ ~1.6 ~ run function death:raisedead
+
 tag @a remove heal
 tag @a remove repair
 tag @a remove empower

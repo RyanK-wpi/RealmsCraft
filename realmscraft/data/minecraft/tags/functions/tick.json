@@ -3,6 +3,7 @@
 		"spells:spell",
 		"func:cooldown",
 		"func:effects",
+		"death:loopdeath",
 		"bossbar:loop"
 
 	]

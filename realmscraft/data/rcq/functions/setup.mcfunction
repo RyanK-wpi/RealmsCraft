@@ -28,6 +28,7 @@ scoreboard objectives add cooldownEnfeeble dummy
 scoreboard objectives add cooldownLB dummy
 scoreboard objectives add cooldownGuidance dummy
 scoreboard objectives add cooldownVision dummy
+scoreboard objectives add cooldownRD dummy
 
 team add marshals
 team join marshals @a[gamemode=creative]
