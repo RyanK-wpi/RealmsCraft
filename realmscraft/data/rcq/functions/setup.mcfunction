@@ -14,6 +14,7 @@ scoreboard objectives add health health
 scoreboard objectives add raycast dummy
 scoreboard objectives add MMCount dummy
 scoreboard objectives add click minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add grab minecraft.used:minecraft.shield
 scoreboard objectives add castMM minecraft.used:minecraft.snowball
 scoreboard objectives add magicMissileTime dummy
 scoreboard objectives add hasMissile dummy
@@ -29,6 +30,9 @@ scoreboard objectives add cooldownLB dummy
 scoreboard objectives add cooldownGuidance dummy
 scoreboard objectives add cooldownVision dummy
 scoreboard objectives add cooldownRD dummy
+scoreboard objectives add cooldownSoL dummy
+scoreboard objectives add beckoned dummy
+scoreboard objectives add regenerateTime dummy
 
 team add marshals
 team join marshals @a[gamemode=creative]

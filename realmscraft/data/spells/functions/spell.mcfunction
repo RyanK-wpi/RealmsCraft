@@ -14,7 +14,10 @@ execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_st
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Divine Aid\""}}}}] run function spells:seeraid
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Vision\""}}}}] run function spells:seervision
 
-execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Raise Dead\""}}}}] at @s positioned ~ ~1.6 ~ run function death:raisedead
+execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Raise Dead\""}}}}] at @s positioned ~ ~0.6 ~ run function death:raisedead
+execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Cry of Life\""}}}}] at @s positioned ~ ~0.6 ~ run function death:cryoflife
+execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Beckon Corpse\""}}}}] at @s positioned ~-0.5 ~1.6 ~ run function death:beckoncorpse
+execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Seed of Life\""}}}}] at @s positioned ~ ~0.6 ~ run function death:seedoflife
 
 tag @a remove heal
 tag @a remove repair
@@ -23,3 +26,8 @@ tag @e remove enfeeble
 
 scoreboard players set @a raycast 0
 scoreboard players set @a click 0
+#scoreboard players set @e[scores={beckoned=1}] beckoned 0
+
+
+#clear @s minecraft:shield{}
+#execute as @a[] run replaceitem entity @s offhand minecraft:shield{}
