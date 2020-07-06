@@ -14,7 +14,8 @@ scoreboard objectives add health health
 scoreboard objectives add raycast dummy
 scoreboard objectives add MMCount dummy
 scoreboard objectives add click minecraft.used:minecraft.carrot_on_a_stick
-scoreboard objectives add grab minecraft.used:minecraft.shield
+scoreboard objectives add shift minecraft.custom:minecraft.sneak_time
+scoreboard objectives add grab dummy
 scoreboard objectives add castMM minecraft.used:minecraft.snowball
 scoreboard objectives add magicMissileTime dummy
 scoreboard objectives add hasMissile dummy

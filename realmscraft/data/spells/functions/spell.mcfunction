@@ -26,8 +26,7 @@ tag @e remove enfeeble
 
 scoreboard players set @a raycast 0
 scoreboard players set @a click 0
-#scoreboard players set @e[scores={beckoned=1}] beckoned 0
 
-
-#clear @s minecraft:shield{}
-#execute as @a[] run replaceitem entity @s offhand minecraft:shield{}
+#invisible shield method for detecting right click - no longer works
+#clear @a[nbt=!{Inventory:[{id:"minecraft:shield",tag:{display:{Name:"\"Grab\""}},Slot:-106b}]}] minecraft:shield{display:{Name:"\"Grab\""}}
+#execute as @a[nbt=!{Inventory:[{Slot:-106b}]}] run replaceitem entity @s weapon.offhand minecraft:shield{display:{Name:"\"Grab\""}}
