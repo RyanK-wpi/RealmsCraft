@@ -9,6 +9,8 @@ function rk:gi-ant/bloodied
 execute as @e[tag=gi-ant] store result score @s mobHealth run data get entity @s Health
 #Gi-Ant regeneration Logic
 execute as @e[tag=alive,tag=gi-ant,scores={mobHealth=..90}] run function rk:gi-ant/regen
+#Gi-Ant render soulless Logic
+execute as @e[tag=regen,tag=gi-ant,scores={mobHealth=..80}] run function rk:gi-ant/render_soulless
 
 #Logic for each mob
 function rk:gi-ant/wolf/main
