@@ -7,6 +7,8 @@ function rk:gi-ant/particle
 function rk:gi-ant/bloodied
 #Track Gi-Ant mob health (required for tracking phases)
 execute as @e[tag=gi-ant] store result score @s mobHealth run data get entity @s Health
+#Gi-Ant regeneration Logic
+execute as @e[tag=alive,tag=gi-ant,scores={mobHealth=..90}] run function rk:gi-ant/regen
 
 #Logic for each mob
 function rk:gi-ant/wolf/main
