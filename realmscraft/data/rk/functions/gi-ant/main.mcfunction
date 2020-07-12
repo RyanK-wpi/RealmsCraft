@@ -1,4 +1,6 @@
 #Run as part of rk:main
+#Initialize newly spawned Gi-Ant mobs
+execute as @e[tag=spawn_gi-ant] run function rk:gi-ant/spawn
 #Timers for Gi-Ant funtionality
 function rk:gi-ant/timer
 #Particle Effects for Gi-Ant functionality
