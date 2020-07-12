@@ -23,5 +23,5 @@ execute as @e[type=zombie,x=1,y=1,z=2,distance=..2] run function death:corpsesco
 execute at @e[type=armor_stand,name="death location"] run tp @e[type=item,distance=..2] 1.5 4 3.5
 
 #if player has regeneration feat, begin 2 min corpse regen
-execute as @s[tag=regeneration] run scoreboard players set @e[type=zombie,x=1,y=1,z=2,distance=..2] regenerateTime 2400
-execute as @s[tag=regeneration] run tag @e[type=zombie,x=1,y=1,z=2,distance=..2] add regenerate
+execute as @s[tag=regeneration,tag=!cooldownRegen] run scoreboard players set @e[type=zombie,x=1,y=1,z=2,distance=..2] regenerateTime 2400
+execute as @s[tag=regeneration,tag=!cooldownRegen] run tag @e[type=zombie,x=1,y=1,z=2,distance=..2] add regenerate

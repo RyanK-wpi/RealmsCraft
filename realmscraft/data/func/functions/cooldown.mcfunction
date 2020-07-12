@@ -9,6 +9,7 @@ scoreboard players remove @a[scores={cooldownGuidance=1..}] cooldownGuidance 1
 scoreboard players remove @a[scores={cooldownVision=1..}] cooldownVision 1
 scoreboard players remove @a[scores={cooldownRD=1..}] cooldownRD 1
 scoreboard players remove @a[scores={cooldownSoL=1..}] cooldownSoL 1
+scoreboard players remove @a[scores={cooldownRegen=1..}] cooldownRegen 1
 
 
 execute as @a[scores={cooldownHeal=1}] run function func:cooldownheal
@@ -22,3 +23,4 @@ execute as @a[scores={cooldownGuidance=1}] run function func:cooldownguide
 execute as @a[scores={cooldownVision=1}] run function func:cooldownvision
 execute as @a[scores={cooldownRD=1}] run function func:cooldownrd
 execute as @a[scores={cooldownSoL=1}] run function func:cooldownsol
+execute as @a[scores={cooldownRegen=1}] run function func:cooldownregen
