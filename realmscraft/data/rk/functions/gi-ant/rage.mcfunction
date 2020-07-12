@@ -7,6 +7,7 @@ tag @s add rage
 data merge entity @s {NoAI:0b}
 #Heal mob
 data merge entity @s {Health:100}
+execute as @s store result score @s mobHealth run data get entity @s Health
 #Reset mobRegenTime
 scoreboard players set @s mobRegenTime 0
 #Rest mobRageTime (just in case)
