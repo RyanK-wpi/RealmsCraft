@@ -7,5 +7,6 @@ tag @s add regen
 data merge entity @s {NoAI:1b}
 #Set "Soul" points (used for Render Souless logic)
 data merge entity @s {Health:100}
+execute as @s store result score @s mobHealth run data get entity @s Health
 #Reset regen timer, just in case
 scoreboard players set @s mobRegenTime 0
