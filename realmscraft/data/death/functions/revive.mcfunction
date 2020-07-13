@@ -4,7 +4,7 @@ gamemode adventure @a[gamemode=spectator,tag=dead,tag=deathwatch,scores={deathLi
 
 # Start regeneration spell cooldown (if appropriate)
 execute as @s[scores={regenerateTime=0}] run tag @a[tag=dead,tag=regeneration,scores={deathLine=0}] add cooldownRegen
-execute as @s[scores={regenerateTime=0}] run scoreboard players set @a[tag=dead,tag=regeneration,scores={deathLine=0}] cooldownRegen 300
+execute as @s[scores={regenerateTime=0}] run scoreboard players set @a[tag=dead,tag=regeneration,scores={deathLine=0}] cooldownRegen 600
 
 tag @a[tag=dead,scores={deathLine=0}] remove dead
 scoreboard players operation @a deathLine += @s deathLine
