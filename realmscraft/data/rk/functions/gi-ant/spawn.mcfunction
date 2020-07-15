@@ -1,10 +1,8 @@
 #Run as part of rk:gi-ant/main
 #@s: Mob with the spawn_gi-ant tag
-#Add alive and gi-ant tags, remove spawn_gi-ant tag
+#Add alive and gi-ant tags
 tag @s add alive
 tag @s add gi-ant
+#Swap spawn_gi-ant tag for spawn_gi-ant_ext tag
 tag @s remove spawn_gi-ant
-#Set MaxHealth and Health
-attribute @s minecraft:generic.max_health base set 100
-data merge entity @s {Health:100}
-execute as @s store result score @s mobHealth run data get entity @s Health
+tag @s add spawn_gi-ant_ext

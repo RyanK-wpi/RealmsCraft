@@ -9,14 +9,25 @@ function rk:gi-ant/particle
 function rk:gi-ant/bloodied
 #Track Gi-Ant mob health (required for tracking phases)
 execute as @e[tag=gi-ant] store result score @s mobHealth run data get entity @s Health
-#Gi-Ant regeneration Logic
-execute as @e[tag=alive,tag=gi-ant,scores={mobHealth=..90}] run function rk:gi-ant/regen
-#Gi-Ant render soulless Logic
-execute as @e[tag=regen,tag=gi-ant,scores={mobHealth=..90}] run function rk:gi-ant/render_soulless
-#Gi-Ant rage Logic
-execute as @e[tag=regen,tag=gi-ant,scores={mobRegenTime=600..}] run function rk:gi-ant/rage
-#Gi-Ant post rage Logic
-execute as @e[tag=rage,tag=gi-ant,scores={mobRageTime=200..}] run function rk:gi-ant/post_rage
 
-#Logic for each mob
+#Gi-Ant Mob Stages:
+# 1. Alive
+# 2. Takes enough damage --> Regenerating
+# 3a. Takes enough soul blows --> Rendered Soulless
+# 3b. Regenerating finishes --> Raging
+# 4a. Takes enough damage during rage --> Dead
+# 4b. Rage finished --> Alive (loop back to 1)
+#Gi-Ant regeneration Logic (Check if mob's health is <= to their configured regen trigger value)
+execute as @e[tag=alive,tag=gi-ant] if score @s mobHealth <= @s mobRegenTrigger run function rk:gi-ant/regen
+#Gi-Ant render soulless Logic (Check if mob's health is <= to their configured soul trigger value)
+execute as @e[tag=regen,tag=gi-ant] if score @s mobHealth <= @s mobSoulTrigger run function rk:gi-ant/render_soulless
+#Gi-Ant rage Logic (Check if mob's time spent regenerating is >= their regen length)
+execute as @e[tag=regen,tag=gi-ant] if score @s mobRegenTime >= @s mobRegenLength run function rk:gi-ant/rage
+#Gi-Ant post rage Logic (Check if mob's time spent raging is >= their rage length)
+execute as @e[tag=rage,tag=gi-ant] if score @s mobRageTime >= @s mobRageLength run function rk:gi-ant/post_rage
+
+#Additional logic for each mob type
 function rk:gi-ant/wolf/main
+
+#Remove spawn_gi-ant_ext tag from any newly spawned mob
+execute as @e[tag=spawn_gi-ant_ext] run tag @s remove spawn_gi-ant_ext

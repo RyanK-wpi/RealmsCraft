@@ -5,8 +5,8 @@ tag @s remove regen
 tag @s add rage
 #Turn AI back on
 data merge entity @s {NoAI:0b}
-#Heal mob
-data merge entity @s {Health:100}
+#Set mob health to their Rage Health (Max Health)
+data modify entity @s Health set from entity @s Attributes[{Name:"minecraft:generic.max_health"}].Base
 execute as @s store result score @s mobHealth run data get entity @s Health
 #Reset mobRegenTime
 scoreboard players set @s mobRegenTime 0
