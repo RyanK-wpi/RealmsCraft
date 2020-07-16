@@ -32,6 +32,7 @@ scoreboard objectives add cooldownGuidance dummy
 scoreboard objectives add cooldownVision dummy
 scoreboard objectives add cooldownRD dummy
 scoreboard objectives add cooldownSoL dummy
+scoreboard objectives add cooldownRegen dummy
 scoreboard objectives add beckoned dummy
 scoreboard objectives add regenerateTime dummy
 
