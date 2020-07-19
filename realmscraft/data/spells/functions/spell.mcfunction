@@ -27,6 +27,8 @@ tag @e remove enfeeble
 scoreboard players set @a raycast 0
 scoreboard players set @a click 0
 
-#invisible shield method for detecting right click - no longer works
-#clear @a[nbt=!{Inventory:[{id:"minecraft:shield",tag:{display:{Name:"\"Grab\""}},Slot:-106b}]}] minecraft:shield{display:{Name:"\"Grab\""}}
-#execute as @a[nbt=!{Inventory:[{Slot:-106b}]}] run replaceitem entity @s weapon.offhand minecraft:shield{display:{Name:"\"Grab\""}}
+#invisible carrot on a stick used for grabbing corpses, only exists if nothing in the players main hand
+clear @a[nbt=!{SelectedItem:[{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Grab\""}}}]}] minecraft:carrot_on_a_stick{display:{Name:"\"Grab\""}}
+execute as @a[nbt=!{SelectedItem:{}}] run replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{display:{Name:"\"Grab\""}}
+
+execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Grab\""}}}}] run scoreboard players add @s grab 1
