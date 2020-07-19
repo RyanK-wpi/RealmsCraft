@@ -1,4 +1,4 @@
-scoreboard players add @e[tag=magicMissile] magicMissileTime 1
+scoreboard players add @e[nbt={Item:{id:"minecraft:snowball",tag:{display:{Name:"\"Magic Missile\""}}}}] magicMissileTime 1
 
 execute at @e[type=snowball,scores={magicMissileTime=1}] run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,CustomName:"\"missileMarker\"",Marker:1b,Invisible:1b}
 execute as @e[type=minecraft:snowball,scores={magicMissileTime=2..}] at @s run teleport @e[type=minecraft:armor_stand,distance=..2,name=missileMarker] @s
