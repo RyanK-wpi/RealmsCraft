@@ -14,7 +14,7 @@ execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_st
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Divine Aid\""}}}}] run function spells:seeraid
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Vision\""}}}}] run function spells:seervision
 
-execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Raise Dead\""}}}}] at @s positioned ~ ~0.6 ~ run function death:raisedead
+execute as @a[scores={click=1..,raisedeadcount=..5},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Raise Dead\""}}}}] at @s positioned ~ ~0.6 ~ run function death:raisedead
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Cry of Life\""}}}}] at @s positioned ~ ~0.6 ~ run function death:cryoflife
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Beckon Corpse\""}}}}] at @s positioned ~-0.5 ~1.6 ~ run function death:beckoncorpse
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Seed of Life\""}}}}] at @s positioned ~ ~0.6 ~ run function death:seedoflife
