@@ -9,7 +9,7 @@ give @s minecraft:trident{display:{Name:"\"Lightning Bolt\"",Lore:["\"Spell Atta
 
 give @s minecraft:fermented_spider_eye{display:{Name:"\"Arcane Eye\"",Lore:["\"Spell Focus\""]}}
 give @s minecraft:carrot_on_a_stick{CustomModelData:121,display:{Name:"\"Guidance\"",Lore:["\"Spell Focus\""]}} 1
-give @s minecraft:carrot_on_a_stick{CustomModelData:122,display:{Name:"\"Divine Aid\"",Lore:["\"Spell Focus\""]}} 1
+give @s minecraft:carrot_on_a_stick{CustomModelData:122,display:{Name:"\"Divine Aid\"",Lore:["\"Spell Focus\""]}} 2
 give @s minecraft:carrot_on_a_stick{CustomModelData:123,display:{Name:"\"Vision\"",Lore:["\"Spell Focus\""]}} 1
 
 give @s minecraft:carrot_on_a_stick{CustomModelData:202,display:{Name:"\"Raise Dead\"",Lore:["\"Spell Focus\""]}} 1
