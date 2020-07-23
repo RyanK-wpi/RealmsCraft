@@ -1,6 +1,6 @@
 give @s minecraft:carrot_on_a_stick{CustomModelData:101,display:{Name:"\"Heal\"",Lore:["\"Spell Focus\""]}} 1
 give @s minecraft:carrot_on_a_stick{CustomModelData:102,display:{Name:"\"Repair Armor\"",Lore:["\"Spell Focus\""]}} 1
-give @s minecraft:torch{display:{Name:"\"Light\"",Lore:["\"Spell Focus\""]}} 1
+give @s minecraft:torch{CustomModelData:1,display:{Name:"\"Light\"",Lore:["\"Spell Focus\""]}} 1
 give @s minecraft:carrot_on_a_stick{display:{Name:"\"Empower\"",Lore:["\"Spell Focus\""]}} 1
 
 give @s minecraft:wither_skeleton_skull{display:{Name:"\"Ward Undead\"",Lore:["\"Spell Focus\""]}}
