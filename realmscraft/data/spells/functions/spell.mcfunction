@@ -1,6 +1,6 @@
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Heal\""}}}}] at @s positioned ~ ~0.6 ~ run function spells:supportheal
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Repair Armor\""}}}}] at @s positioned ~ ~0.6 ~ run function spells:supportarmor
-execute as @a[nbt={SelectedItem:{id:"minecraft:torch"}}] at @s run function spells:supportlight
+execute as @a[nbt={SelectedItem:{id:"minecraft:torch",tag:{display:{Name:"\"Light\""}}}}] at @s run function spells:supportlight
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Empower\""}}}}] at @s positioned ~ ~0.6 ~ run function spells:supportempower
 
 execute as @a[scores={castMM=1..}] at @s run function func:castmissile
@@ -29,6 +29,6 @@ scoreboard players set @a click 0
 
 #invisible carrot on a stick used for grabbing corpses, only exists if nothing in the players main hand
 clear @a[nbt=!{SelectedItem:[{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Grab\""}}}]}] minecraft:carrot_on_a_stick{display:{Name:"\"Grab\""}}
-execute as @a[nbt=!{SelectedItem:{}}] run replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{display:{Name:"\"Grab\""}}
+execute as @a[nbt=!{SelectedItem:{}}] run replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{CustomModelData:1001,display:{Name:"\"Grab\""}}
 
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Grab\""}}}}] run scoreboard players add @s grab 1
