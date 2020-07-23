@@ -1,6 +1,6 @@
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Heal\""}}}}] at @s positioned ~ ~0.6 ~ run function spells:supportheal
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Repair Armor\""}}}}] at @s positioned ~ ~0.6 ~ run function spells:supportarmor
-execute as @a[nbt={SelectedItem:{id:"minecraft:torch"}}] at @s run function spells:supportlight
+execute as @a[nbt={SelectedItem:{id:"minecraft:torch",tag:{display:{Name:"\"Light\""}}}}] at @s run function spells:supportlight
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Empower\""}}}}] at @s positioned ~ ~0.6 ~ run function spells:supportempower
 
 execute as @a[scores={castMM=1..}] at @s run function func:castmissile
