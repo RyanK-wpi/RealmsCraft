@@ -8,5 +8,6 @@ execute if entity @e[tag=revive] run scoreboard players set @s cooldownRD 600
 execute if entity @e[tag=revive] run function func:cooldownrd
 execute if entity @e[tag=revive] run scoreboard players set @s click 0
 execute as @e[tag=revive] run function death:revive
+execute as @s run scoreboard players add @s raisedeadcount 1
 
 execute as @s[scores={raycast=..20}] positioned ^ ^ ^0.1 run function death:raisedead
