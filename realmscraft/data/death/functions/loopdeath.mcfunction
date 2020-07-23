@@ -10,10 +10,6 @@ execute as @a[gamemode=spectator,tag=deathwatch] run function death:deathwatch
 #regenerate corpses with regeneration
 execute as @e[tag=regenerate] run function death:regenerate
 
-#convert shift to Grab
-execute as @a[scores={shift=3..}] run scoreboard players add @s grab 1
-execute as @a[scores={shift=3..}] run scoreboard players set @s shift 0 
-
 #pick up a corpse
 execute as @e[type=zombie,tag=corpse,scores={following=0}] at @s positioned ~0.5 ~ ~ if entity @p[distance=..1.8,gamemode=!spectator,tag=!boss] run function death:pickupcorpse
 execute as @e[type=zombie,scores={corpsecreate=0}] at @s if entity @p[distance=..2.2,gamemode=!spectator,tag=!boss,scores={grab=1}] run function death:corpsecarry
