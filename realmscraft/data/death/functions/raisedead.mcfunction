@@ -5,7 +5,7 @@ execute if entity @e[distance=..1,type=zombie,scores={deathLine=1..}] run scoreb
 
 execute as @s[scores={raycast=1000..}] positioned ^ ^ ^ run tag @e[limit=1,sort=nearest,type=zombie,scores={deathLine=1..}] add revive
 
-execute if entity @e[tag=revive] run scoreboard players set @s cooldownRD 600
+execute if entity @e[tag=revive] run scoreboard players set @s cooldownRD 60
 execute if entity @e[tag=revive] run function func:cooldownrd
 execute if entity @e[tag=revive] run scoreboard players set @s click 0
 execute if entity @e[tag=revive] as @s run scoreboard players add @s raisedeadcount 1

@@ -1,3 +1,4 @@
+#Set the Gamerules
 gamerule commandBlockOutput false
 gamerule doDaylightCycle false
 gamerule doFireTick false
@@ -8,8 +9,10 @@ gamerule mobGriefing false
 gamerule naturalRegeneration false
 gamerule showDeathMessages false
 
+#Set the Time
 time set noon
 
+#Create scoreboards if not already made
 scoreboard objectives add health health
 scoreboard objectives add raycast dummy
 scoreboard objectives add MMCount dummy
@@ -37,5 +40,12 @@ scoreboard objectives add cooldownRegen dummy
 scoreboard objectives add beckoned dummy
 scoreboard objectives add regenerateTime dummy
 
+#Reset deaths/death mechanics
+scoreboard players set @a deathLine 0
+kill @e[tag=corpse]
+execute as @a[tag=dead] run function rcq:tp/tavern
+tag @a[tag=dead] remove dead
+
+#Create the marshal team
 team add marshals
 team join marshals @a[gamemode=creative]

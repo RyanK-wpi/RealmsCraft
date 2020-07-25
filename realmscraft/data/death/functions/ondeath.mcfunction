@@ -7,7 +7,7 @@ tag @s add dead
 scoreboard players set @s deaths 0
 
 #mark the players death location
-execute at @s run summon armor_stand ~ ~ ~ {Invisible:1b,Invulnerable:1b,CustomName:"\"death location\""}
+execute at @s run summon armor_stand ~ ~ ~ {Invisible:1b,Invulnerable:1b,Silent:1b,CustomName:"\"death location\""}
 
 #create the corpsecreator if not already made
 #setblock 1 0 0 redstone_block

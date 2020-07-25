@@ -1,4 +1,5 @@
 give @s minecraft:carrot_on_a_stick{CustomModelData:121,display:{Name:"\"Guidance\"",Lore:["\"Spell Focus\""]}} 1
+scoreboard players set @s cooldownGuidance 0
 give @s minecraft:torch{CustomModelData:1,display:{Name:"\"Light\"",Lore:["\"Spell Focus\""]}} 1
 tag @s add light
 tag @s add deathwatch

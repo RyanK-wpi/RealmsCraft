@@ -4,5 +4,6 @@ scoreboard players operation @s[scores={cooldownRegen=0..}] cooldownRegen -= @s 
 tag @s[tag=!cooldownRegen] add cooldownRegen
 
 tag @s[scores={cooldownRegen=1}] remove cooldownRegen
-tell @s[scores={cooldownRegen=1}] Regeneration Prepared!
+#tell @s[scores={cooldownRegen=1}] Regeneration Prepared!
+tellraw @s[scores={cooldownRegen=1}] {"text":"Regeneration Prepared!","color":"blue"}
 scoreboard players reset @s[scores={cooldownRegen=1}] cooldownRegen
