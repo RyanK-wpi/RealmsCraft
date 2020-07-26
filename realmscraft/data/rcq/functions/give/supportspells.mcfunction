@@ -8,4 +8,5 @@ give @s[tag=Support2] minecraft:carrot_on_a_stick{CustomModelData:203,display:{N
 scoreboard players set @s cooldownHeal 0
 scoreboard players set @s cooldownRA 0
 scoreboard players set @s cooldownRD 0
+scoreboard players set @s raisedeadcount 0
 scoreboard players set @s cooldownSoL 0
