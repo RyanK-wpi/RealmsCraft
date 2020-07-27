@@ -6,3 +6,6 @@ scoreboard objectives add deaths deathCount
 scoreboard objectives add corpsecreate dummy
 scoreboard objectives add deathLine dummy
 scoreboard objectives add following dummy
+
+scoreboard objectives add deathpos.x dummy
+scoreboard objectives add deathpos.z dummy
