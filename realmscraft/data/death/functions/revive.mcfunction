@@ -1,4 +1,5 @@
 scoreboard players operation @a deathLine -= @s deathLine
+tp @s ~ ~0.5 ~
 tp @a[tag=dead,scores={deathLine=0}] @s
 gamemode adventure @a[gamemode=spectator,tag=dead,tag=deathwatch,scores={deathLine=0}]
 
