@@ -11,4 +11,6 @@ tag @a[tag=dead,scores={deathLine=0}] remove dead
 scoreboard players operation @a deathLine += @s deathLine
 scoreboard players set @a[tag=!dead] deathLine 0
 particle happy_villager ~ ~1 ~ 0.25 0.25 0.25 1 20
+
+tp @s ~ 0 ~
 kill @s
