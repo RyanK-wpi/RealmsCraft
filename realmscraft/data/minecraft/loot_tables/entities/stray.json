@@ -26,6 +26,58 @@
           "chance": 0.05
         }
       ]
+  	},
+  	{
+  	  "rolls": 1,
+  	  "entries": [
+  	    {
+  	  	  "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "set_lore",
+              "lore": [
+                [
+                  {"text":"§bQuest Item§b"}
+                ]
+              ],
+              "replace": true
+            }
+          ],
+  	  	  "name": "minecraft:bone"
+  	    }
+  	  ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.40
+        }
+      ]
+  	},
+  	{
+  	  "rolls": 1,
+  	  "entries": [
+  	    {
+  	  	  "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "set_lore",
+              "lore": [
+                [
+                  {"text":"§bQuest Item§b"}
+                ]
+              ],
+              "replace": true
+            }
+          ],
+  	  	  "name": "minecraft:gold_nugget"
+  	    }
+  	  ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.2
+        }
+      ]
   	}
   ]
 }
