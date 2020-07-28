@@ -11,4 +11,4 @@ execute at @e[type=minecraft:trident] run scoreboard players set @e[type=minecra
 execute at @e[type=minecraft:armor_stand,name=lightningMarker,scores={hasLightning=0}] run summon minecraft:lightning_bolt ~ ~ ~
 kill @e[type=minecraft:armor_stand,name=lightningMarker,scores={hasLightning=0}]
 
-execute as @a[tag=Mage,nbt=!{Inventory:[{id:"minecraft:trident"}]}] run function func:cooldownbolt
+execute as @a[tag=Mage2,nbt=!{Inventory:[{id:"minecraft:trident"}]}] run function func:cooldownbolt
