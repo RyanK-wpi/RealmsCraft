@@ -6,4 +6,5 @@ give @s minecraft:carrot_on_a_stick{CustomModelData:111,display:{Name:"\"Enfeebl
 scoreboard players set @s cooldownEnfeeble 0
 
 give @s[tag=Mage2] minecraft:trident{display:{Name:"\"Lightning Bolt\"",Lore:["\"Spell Attack\""]},AttributeModifiers:[{Amount:0}]}
+scoreboard players set @s cooldownLB 0
 tag @s[tag=Mage2] add regeneration
