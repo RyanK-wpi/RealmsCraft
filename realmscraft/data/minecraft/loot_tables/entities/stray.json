@@ -7,6 +7,10 @@
   	    {
   	  	  "type": "minecraft:item",
           "functions": [
+          	{
+          	  "function": "set_name",
+          	  "name": {"text":"Strange Crystal","italic":false}
+          	},
             {
               "function": "set_lore",
               "lore": [
