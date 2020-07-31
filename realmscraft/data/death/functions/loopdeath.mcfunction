@@ -11,8 +11,8 @@ execute as @a[gamemode=spectator,tag=deathwatch] run function death:deathwatch
 execute as @e[tag=regenerate] run function death:regenerate
 
 #pick up a corpse
-execute as @e[type=zombie,tag=corpse,scores={following=0}] at @s positioned ~0.5 ~ ~ if entity @p[distance=..1.8,gamemode=!spectator,tag=!boss] run function death:pickupcorpse
-execute as @e[type=zombie,scores={corpsecreate=0}] at @s if entity @p[distance=..2.2,gamemode=!spectator,tag=!boss,scores={grab=1}] run function death:corpsecarry
+execute as @e[type=zombie,tag=corpse,scores={following=0}] at @s positioned ~0.5 ~ ~ if entity @p[distance=..1.8,gamemode=!spectator,tag=!boss,team=!marshals] run function death:pickupcorpse
+execute as @e[type=zombie,scores={corpsecreate=0}] at @s if entity @p[distance=..2.2,gamemode=!spectator,tag=!boss,scores={grab=1},team=!marshals] run function death:corpsecarry
 execute as @e[type=zombie,scores={corpsecreate=0}] at @s if entity @p[distance=..2.2,gamemode=!spectator,nbt={SelectedItem:{id:"minecraft:wither_skeleton_skull",tag:{display:{Name:"\"Zombie Walk\""}}}}] run function death:corpsecarry
 
 #drop a corpse
