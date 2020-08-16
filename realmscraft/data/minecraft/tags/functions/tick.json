@@ -1,10 +1,9 @@
 {
 	"values": [
-		"spells:spell",
-		"func:cooldown",
-		"func:effects",
-		"death:loopdeath",
-		"bossbar:loop"
+		"spells:spell_loop",
+		"spells:effects_loop",
+		"spells:cooldown_loop",
+		"death:death_loop"
 
 	]
 }
