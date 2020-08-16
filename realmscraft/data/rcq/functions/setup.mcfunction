@@ -1,3 +1,6 @@
+#support function for setting up realmscraft questing
+#Author: Ryan Keller, Aug 2020
+
 #Set the Gamerules
 gamerule commandBlockOutput false
 gamerule doDaylightCycle false
@@ -8,6 +11,7 @@ gamerule keepInventory true
 gamerule mobGriefing false
 gamerule naturalRegeneration false
 gamerule showDeathMessages false
+gamerule doImmediateRespawn true
 
 #Set the Time
 time set noon
@@ -26,13 +30,11 @@ scoreboard objectives add lightningTime dummy
 scoreboard objectives add hasLightning dummy
 scoreboard objectives add cooldownHeal dummy
 scoreboard objectives add cooldownRA dummy
-scoreboard objectives add cooldownTorch dummy
-scoreboard objectives add cooldownEmpower dummy
+scoreboard objectives add cooldownLight dummy
 scoreboard objectives add cooldownMM dummy
 scoreboard objectives add cooldownEnfeeble dummy
 scoreboard objectives add cooldownLB dummy
 scoreboard objectives add cooldownGuidance dummy
-scoreboard objectives add cooldownVision dummy
 scoreboard objectives add cooldownRD dummy
 scoreboard objectives add raisedeadcount dummy
 scoreboard objectives add cooldownSoL dummy
