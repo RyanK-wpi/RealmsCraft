@@ -15,7 +15,7 @@ scoreboard players remove @a[scores={cooldownSoL=1..}] cooldownSoL 1
 execute as @a[scores={cooldownHeal=1}] run function spells:cooldown/heal_limb
 execute as @a[scores={cooldownRA=1}] run function spells:cooldown/repair_armor
 execute as @e[tag=light] run function spells:cooldown/light
-execute as @a[tag=mm] run function spells:cooldown/magic_missile
+execute as @a[tag=magic_missile] run function spells:cooldown/magic_missile
 execute as @a[scores={cooldownEnfeeble=1}] run function spells:cooldown/enfeeble_being
 execute as @a[scores={cooldownLB=1}] run function spells:cooldown/lightning_bolt
 execute as @a[scores={cooldownGuidance=1}] run function spells:cooldown/guidance
