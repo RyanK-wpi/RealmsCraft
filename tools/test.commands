@@ -1,0 +1,21 @@
+"Teleport to 0,70,0" /teleport @p 0 70 0
+comments go before the link in quotes "Set time to noon" /time set noon
+colorred this has a color "Set time to midnight" /time set midnight
+"Set time to noon" /time set noon
+"Teleport to 0,70,0" /teleport @p 0 70 0
+"Set time to noon" /time set noon
+"Set time to midnight" /time set midnight
+
+"Teleport to 0,70,0" /teleport @p 0 70 0
+"Set time to noon" /time set noon
+"Set time to midnight" /time set midnight
+"Teleport to 0,70,0" /teleport @p 0 70 0
+"Set time to noon" /time set noon
+"Set time to midnight" /time set midnight
+this line should cause a warning but no error
+"Teleport to 0,70,0" /teleport @p 0 70 0
+"Set time to noon" /time set noon
+"Set time to midnight" /time set midnight
+"Teleport to 0,70,0" /teleport @p 0 70 0
+"Set time to noon" /time set noon
+"Set time to midnight" /time set midnight
