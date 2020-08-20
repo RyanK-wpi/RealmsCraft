@@ -20,4 +20,4 @@ execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_st
 scoreboard players set @a click 0
 
 #stop players from dropping class items
-execute as @e[type=#spells:undroppables,tag=!processed] run function spells:func/restrict_drop
+execute as @e[type=#spells:undroppable,tag=!processed] run function spells:func/restrict_drop
