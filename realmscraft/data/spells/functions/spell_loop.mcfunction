@@ -12,14 +12,14 @@ execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_st
 #mage
 execute as @a[scores={castMM=1..}] at @s run function spells:func/missile/cast
 function spells:spell/magic_missile
-execute as @a[nbt={SelectedItem:{id:"minecraft:wither_skeleton_skull",tag:{display:{Name:"\"Ward Undead\""}}}}] at @s run function spells:spell/ward_undead
+execute as @a[gamemode=!spectator,nbt={SelectedItem:{id:"minecraft:wither_skeleton_skull",tag:{display:{Name:"\"Ward Undead\""}}}}] at @s run function spells:spell/ward_undead
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Enfeeble Being\""}}}}] at @s positioned ~ ~0.6 ~ run function spells:spell/enfeeble_being
 function spells:spell/lightning_bolt
 
 #seer
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Guidance\""}}}}] run function spells:spell/guidance
-execute as @a[nbt={SelectedItem:{id:"minecraft:torch",tag:{display:{Name:"\"Light\""}}}}] at @s run function spells:spell/light
-execute as @a[nbt={Inventory:[{Slot:-106b,id:"minecraft:torch",tag:{display:{Name:"\"Light\""}}}]}] at @s run function spells:spell/light
+execute as @a[gamemode=!spectator,nbt={SelectedItem:{id:"minecraft:torch",tag:{display:{Name:"\"Light\""}}}}] at @s run function spells:spell/light
+execute as @a[gamemode=!spectator,nbt={Inventory:[{Slot:-106b,id:"minecraft:torch",tag:{display:{Name:"\"Light\""}}}]}] at @s run function spells:spell/light
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Divine Aid\""}}}}] run function spells:spell/divine_aid
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Vision\""}}}}] run function spells:spell/vision
 
