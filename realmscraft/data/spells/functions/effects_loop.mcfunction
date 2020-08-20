@@ -13,7 +13,7 @@ effect give @a[gamemode=adventure] minecraft:saturation 999999 255 true
 
 #invisible carrot on a stick used for grabbing corpses, only exists if nothing in the players main hand
 #giving a player the "Grab" tag exempts them from this.
-execute as @a[tag=!Grab,nbt=!{SelectedItem:{}}] run replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{CustomModelData:1001,display:{Name:"\"Grab\""}}
+execute as @a[gamemode=adventure,tag=!Grab,nbt=!{SelectedItem:{}}] run replaceitem entity @s weapon.mainhand minecraft:carrot_on_a_stick{CustomModelData:1001,display:{Name:"\"Grab\""}}
 execute as @a[nbt=!{SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Grab\""}}}}] run clear @s minecraft:carrot_on_a_stick{display:{Name:"\"Grab\""}}
 execute as @a[scores={click=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:"\"Grab\""}}}}] run scoreboard players add @s grab 1
 
