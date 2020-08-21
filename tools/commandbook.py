@@ -19,24 +19,32 @@ FIRST_PAGE_MAX_LINKS = 5
 LATER_PAGE_MAX_LINKS = 6
 
 
+def escape(s):
+  return s.replace('"', r'\\"').replace("'", r"\'")
+
+
 class Book(object):
 
   def __init__(self, title):
     self.title = title
     self.content = []
-    self.content.append(r"""/give @p written_book""")
-    self.content.append(r"""{pages:['["",{"text":" \\u0020 \\u0020 \\u0020 "},{"text":"%s\\n\\n","underlined":true},""" % self.title)
-
     self.page = 0
     self.links = 0
-    
+
+    self.spaces = 7
     self.author = "commandbook.py"
 
+  def preamble(self):
+    spacing = r" \\u0020" * int(self.spaces / 2)
+    if self.spaces % 2 == 1:
+      spacing += " "
+    return r"""/give @p written_book{pages:['["",{"text":"%s"},{"text":"%s\\n\\n","underlined":true},""" % (spacing, self.title)
+    
   def clear_color(self):
     self.content.append(r"""{"text":"\\n\\n","color":"reset"},""")
 
   def add_link(self, text, command, color="blue"):
-    self.content.append(r"""{"text":"%s","underlined":true,"color":"%s","clickEvent":{"action":"run_command","value":"%s"}},""" % (text, color, command))
+    self.content.append(r"""{"text":"%s","underlined":true,"color":"%s","clickEvent":{"action":"run_command","value":"%s"}},""" % (text, color, escape(command)))
     self.clear_color()
     self.links += 1
     if ((self.page == 0 and self.links == FIRST_PAGE_MAX_LINKS)
@@ -47,6 +55,7 @@ class Book(object):
   
   def generate(self):
     data = self.content[:]
+    data = [self.preamble()] + data
     data[-1] = data[-1][:-1] # Strip off final trailing comma
     data.append(r"""]'],title:"%s",author:"%s"}""" % (self.title, self.author))
     return "".join(data)
@@ -57,8 +66,20 @@ def commandbook(filename):
 
   with open(filename) as f:
     for i, line in enumerate(f):
+      if line.startswith(":"):
+        for assignment in line[1:].split(";"):
+          key, value = assignment.split("=")
+          key = key.strip()
+          value = value.strip()
+          if key == "title":
+            book.title = value
+          elif key == "author":
+            book.author = value
+          elif key == "spacing":
+            book.spaces = int(value)
+        continue
       try:
-        comment, text, command = line.split('"')
+        comment, text, command = line.split('"', 2)
         if comment.startswith("color"):
           book.add_link(text, command.strip(), comment.split(" ")[0].split("color")[1])
         book.add_link(text, command.strip())
