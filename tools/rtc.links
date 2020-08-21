@@ -1,7 +1,12 @@
+: title=Linking Book; author=Eric
 Book repo: 52 101 204
 Outpost center: -23 65 -26
-Chapel: -276 96 161
-Ravine: -576 141 -59
+Underground templates: -279 104 144
+Ravine: -27 46 -41
 Gate: -202 65 -71
-Boss: -201 75 237
+Color puzzle: -186 79 331
+Boss: -186 79 358
 Boss Mind: -276 61 217
+Tavern: -151 11 208
+Old Ravine: -576 141 -59
+Chapel: -276 96 161

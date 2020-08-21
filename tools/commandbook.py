@@ -34,6 +34,18 @@ class Book(object):
     self.spaces = 7
     self.author = "commandbook.py"
 
+  def parse_config(self, line):
+    for assignment in line.split(";"):
+      key, value = assignment.split("=")
+      key = key.strip()
+      value = value.strip()
+      if key == "title":
+        self.title = value
+      elif key == "author":
+        self.author = value
+      elif key == "spacing":
+        self.spaces = int(value)
+
   def preamble(self):
     spacing = r" \\u0020" * int(self.spaces / 2)
     if self.spaces % 2 == 1:
@@ -67,16 +79,7 @@ def commandbook(filename):
   with open(filename) as f:
     for i, line in enumerate(f):
       if line.startswith(":"):
-        for assignment in line[1:].split(";"):
-          key, value = assignment.split("=")
-          key = key.strip()
-          value = value.strip()
-          if key == "title":
-            book.title = value
-          elif key == "author":
-            book.author = value
-          elif key == "spacing":
-            book.spaces = int(value)
+        book.parse_config(line[1:])
         continue
       try:
         comment, text, command = line.split('"', 2)

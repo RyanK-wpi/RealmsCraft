@@ -17,6 +17,9 @@ def linkingbook(filename):
 
   with open(filename) as f:
     for line in f:
+      if line.startswith(":"):
+        book.parse_config(line[1:])
+        continue
       name, coords = line.split(":")
       book.add_link(name, "/teleport @p %s" % coords.strip())
 
