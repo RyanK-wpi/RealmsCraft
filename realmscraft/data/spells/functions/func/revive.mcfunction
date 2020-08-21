@@ -20,6 +20,7 @@ execute at @p run particle happy_villager ~ ~1 ~ 0.25 0.25 0.25 1 20
 scoreboard players operation @a deathLine += @s deathLine
 scoreboard players set @a[tag=!dead] deathLine 0
 
-#get rid of the corpse
+#get rid of the bed and corpse
+execute at @s run setblock ~ 1 ~ air
 tp @s ~ 0 ~
 kill @s
