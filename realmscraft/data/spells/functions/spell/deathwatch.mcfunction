@@ -7,8 +7,8 @@ scoreboard players operation @e[type=zombie,tag=corpse] deathLine -= @s deathLin
 
 #if the player is not near their corpse, tp them to their corpse
 execute as @s at @s positioned ~ ~1 ~ unless entity @e[distance=..0.1,tag=corpse,scores={deathLine=0}] run tag @s add dw_move
-execute as @e[tag=corpse,scores={deathLine=0},sort=nearest,limit=1] at @s run tp @p[gamemode=spectator,tag=deathwatch,tag=dw_move] ~ ~1 ~
-execute as @s run tag @s remove dw_move
+execute if entity @s[tag=dw_move] as @e[tag=corpse,scores={deathLine=0},sort=nearest,limit=1] at @s run tp @p[gamemode=spectator,tag=deathwatch,tag=dw_move] ~ ~1 ~
+execute as @s[tag=dw_move] at @s positioned ~ ~1 ~ if entity @e[distance=..0.1,tag=corpse,scores={deathLine=0}] run tag @s remove dw_move
 
 #return the death line to original state
 scoreboard players operation @e[type=zombie,tag=corpse] deathLine += @s deathLine
