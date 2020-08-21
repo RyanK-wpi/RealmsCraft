@@ -1,0 +1,2 @@
+: title=GM Tools; author=Eric; spaces=8
+"Night Vision" /effect give @p night_vision 6000

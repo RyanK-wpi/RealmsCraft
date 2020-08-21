@@ -1,0 +1,2 @@
+: title=Example Commands; author=Eric; spacing = 2
+"Name and Lore" /give @p paper{display:{Name:'"Named Paper"', Lore:['"There are secrets here"']}}
