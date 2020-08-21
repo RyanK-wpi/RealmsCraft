@@ -2,7 +2,7 @@
 #Author: Ryan Keller, Aug 2020
 
 tag @e[distance=..3,tag=closest] remove closest
-execute as @p at @s run tag @e[distance=0.5..1.5,tag=corpse,sort=nearest,limit=1] add closest
+execute as @p[gamemode=adventure] at @s run tag @e[distance=0.5..1.5,tag=corpse,sort=nearest,limit=1] add closest
 
 #mark corpse location
 execute at @s[tag=closest] run summon armor_stand ~ ~ ~ {Invisible:1b,Invulnerable:1b,Silent:1b,CustomName:"\"pickup corpse\""}
