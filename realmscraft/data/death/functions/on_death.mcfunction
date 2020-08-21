@@ -24,7 +24,7 @@ tp @s[tag=deathwatch] @e[name="death location",limit=1]
 #create a corpse, delay required to ensure head is placed on zombie by dispenser in "createcorpse" structure
 summon zombie 1 1 2 {Invulnerable:1,PersistenceRequired:1,Silent:1,NoAI:1,CanPickUpLoot:1b}
 execute as @e[type=zombie,x=1,y=1,z=2,distance=..2] run function death:corpse_scores
-execute at @e[type=armor_stand,name="death location"] run tp @e[type=item,distance=..2] 1.5 4 3.5
+execute at @e[type=armor_stand,name="death location"] run tp @e[type=item,distance=..2] 1.5 3.75 3.5
 
 #if player has regeneration feat, begin 2 min corpse regen
 execute as @s[tag=regeneration,scores={cooldownRegen=0}] run function spells:spell/regeneration
