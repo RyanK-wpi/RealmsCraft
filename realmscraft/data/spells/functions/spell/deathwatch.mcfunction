@@ -6,7 +6,7 @@
 scoreboard players operation @e[type=zombie,tag=corpse] deathLine -= @s deathLine
 
 #if the player is not near their corpse, tp them to their corpse
-execute as @s at @s positioned ~ ~-1 ~ unless entity @e[distance=..0.1,tag=corpse,scores={deathLine=0}] run teleport @s @e[tag=corpse,scores={deathLine=0},sort=nearest,limit=1]
+execute as @s at @s positioned ~ ~1 ~ unless entity @e[distance=..0,tag=corpse,scores={deathLine=0}] run function spells:func/deathwatch
 
 #return the death line to original state
 scoreboard players operation @e[type=zombie,tag=corpse] deathLine += @s deathLine
