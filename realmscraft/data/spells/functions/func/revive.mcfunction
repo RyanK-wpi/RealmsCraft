@@ -6,6 +6,7 @@ scoreboard players operation @a deathLine -= @s deathLine
 
 #reset players shift score (for regeneration)
 scoreboard players set @p[tag=dead] shift 0
+scoreboard players set @p[tag=dead,tag=regeneration] cooldownRegen 1
 
 #move player to corpse
 tp @s ~ ~0.5 ~
