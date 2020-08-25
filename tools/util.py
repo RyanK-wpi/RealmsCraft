@@ -23,4 +23,8 @@ def mc_json(data):
     s.append("]")
   elif type(data) == str:
     s.append("'\"" + data.replace("'", "\\'").replace('"', '\\\\"') + "\"'")
+  elif type(data) == tuple:
+    s.append("'" + str(data[0]) + "'")
+  else:
+    s.append(str(data))
   return "".join(s)

@@ -12,7 +12,9 @@
 # fancier text, make a separate file that imports this one and
 # instantiates or subclasses Book.
 
+import json
 import sys
+from util import mc_json
 
 
 FIRST_PAGE_MAX_LINKS = 5
@@ -27,7 +29,8 @@ class Book(object):
 
   def __init__(self, title):
     self.title = title
-    self.content = []
+    self.pages = [[]]
+    self.bookdata = None
     self.page = 0
     self.links = 0
 
@@ -47,30 +50,48 @@ class Book(object):
         self.spaces = int(value)
 
   def preamble(self):
-    spacing = r" \\u0020" * int(self.spaces / 2)
+    return r"/give @p written_book"
+
+  def make_title(self):
+#    spacing = r" \\u0020" * int(self.spaces / 2)
+    spacing = r" \u0020" * int(self.spaces / 2)
     if self.spaces % 2 == 1:
       spacing += " "
-    return r"""/give @p written_book{pages:['["",{"text":"%s"},{"text":"%s\\n\\n","underlined":true},""" % (spacing, self.title)
-    
-  def clear_color(self):
-    self.content.append(r"""{"text":"\\n\\n","color":"reset"},""")
+    return [{"text":r"%s" % spacing},
+            {"text":r"%s\n\n" % self.title, "underlined":True}]
+  
+#  def clear_color(self):
+#    self.content.append(r"""{"text":"\\n\\n","color":"reset"},""")
 
   def add_link(self, text, command, color="blue"):
-    self.content.append(r"""{"text":"%s","underlined":true,"color":"%s","clickEvent":{"action":"run_command","value":"%s"}},""" % (text, color, escape(command)))
-    self.clear_color()
+#    self.content.pages[-1].append(r"""{"text":"%s","underlined":true,"color":"%s","clickEvent":{"action":"run_command","value":"%s"}},""" % (text, color, escape(command)))
+    self.pages[-1].append({"text": text,
+                           "underlined": True,
+                           "color": color,
+                           "clickEvent": {
+                             "action": "run_command",
+#                                        "value": escape(command)
+                             "value": command
+                           }})
+    self.pages[-1].append([{"text": "\\n\\n"},
+                           {"color": "reset"}])
     self.links += 1
     if ((self.page == 0 and self.links == FIRST_PAGE_MAX_LINKS)
         or (self.links - FIRST_PAGE_MAX_LINKS) % LATER_PAGE_MAX_LINKS == 0):
       self.page += 1
-      self.content[-1] = self.content[-1][:-1] # Strip off final trailing comma
-      self.content.append(r"""]','[""")
+      self.pages.append([])
+#      self.content[-1] = self.content[-1][:-1] # Strip off final trailing comma
+#      self.content.append(r"""]','[""")
   
   def generate(self):
-    data = self.content[:]
-    data = [self.preamble()] + data
-    data[-1] = data[-1][:-1] # Strip off final trailing comma
-    data.append(r"""]'],title:"%s",author:"%s"}""" % (self.title, self.author))
-    return "".join(data)
+    pages = self.pages[:]
+    pages[0] = self.make_title() + pages[0]
+    data = {
+      "title": (self.title,),
+      "author": (self.author,),
+      "pages": [(json.dumps(page),) for page in self.pages]
+    }
+    return self.preamble() + mc_json(data)
 
 
 def commandbook(filename):
