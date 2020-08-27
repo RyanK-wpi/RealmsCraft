@@ -1,7 +1,12 @@
 "Teleport to 0,70,0" /teleport @p 0 70 0
 comments go before the link in quotes "Set time to noon" /time set noon
 colorred this has a color "Set time to midnight" /time set midnight
+: pagebreak
 "Set time to noon" /time set noon
+
+"This is just text"
+colorgreen "This is colorful text"
+
 "Teleport to 0,70,0" /teleport @p 0 70 0
 "Set time to noon" /time set noon
 "Set time to midnight" /time set midnight

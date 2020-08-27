@@ -38,6 +38,9 @@ class Book(object):
     self.author = "commandbook.py"
 
   def parse_config(self, line):
+    if line.strip().startswith("pagebreak"):
+      self.new_page()
+      return
     for assignment in line.split(";"):
       key, value = assignment.split("=")
       key = key.strip()
@@ -53,35 +56,46 @@ class Book(object):
     return r"/give @p written_book"
 
   def make_title(self):
-#    spacing = r" \\u0020" * int(self.spaces / 2)
     spacing = r" \u0020" * int(self.spaces / 2)
     if self.spaces % 2 == 1:
       spacing += " "
     return [{"text":r"%s" % spacing},
             {"text":r"%s\n\n" % self.title, "underlined":True}]
-  
-#  def clear_color(self):
-#    self.content.append(r"""{"text":"\\n\\n","color":"reset"},""")
+
+  def new_page(self):
+    self.page += 1
+    self.pages.append([])
+    self.links = 0
+    
+  def reset_color(self):
+    self.pages[-1] += [{"text": "\\n\\n",
+                        "color": "reset"}]
+
+  def add_text(self, text, command, color="black"):
+    self.pages[-1].append({"text": text,
+                           "underlined": False,
+                           "color": color})
+    self.reset_color()
+
+    self.links += 1
+    if ((self.page == 0 and self.links == FIRST_PAGE_MAX_LINKS)
+        or self.links % LATER_PAGE_MAX_LINKS == 0):
+      self.new_page()
 
   def add_link(self, text, command, color="blue"):
-#    self.content.pages[-1].append(r"""{"text":"%s","underlined":true,"color":"%s","clickEvent":{"action":"run_command","value":"%s"}},""" % (text, color, escape(command)))
     self.pages[-1].append({"text": text,
                            "underlined": True,
                            "color": color,
                            "clickEvent": {
                              "action": "run_command",
-#                                        "value": escape(command)
                              "value": command
                            }})
-    self.pages[-1].append([{"text": "\\n\\n"},
-                           {"color": "reset"}])
+    self.reset_color()
+    
     self.links += 1
     if ((self.page == 0 and self.links == FIRST_PAGE_MAX_LINKS)
-        or (self.links - FIRST_PAGE_MAX_LINKS) % LATER_PAGE_MAX_LINKS == 0):
-      self.page += 1
-      self.pages.append([])
-#      self.content[-1] = self.content[-1][:-1] # Strip off final trailing comma
-#      self.content.append(r"""]','[""")
+        or self.links % LATER_PAGE_MAX_LINKS == 0):
+      self.new_page()
   
   def generate(self):
     pages = self.pages[:]
@@ -89,7 +103,8 @@ class Book(object):
     data = {
       "title": (self.title,),
       "author": (self.author,),
-      "pages": [(json.dumps(page),) for page in self.pages]
+      "pages": [(json.dumps(page).replace("'", r"\'"),) for page in self.pages],
+      "CustomModelData": 1
     }
     return self.preamble() + mc_json(data)
 
@@ -104,9 +119,14 @@ def commandbook(filename):
         continue
       try:
         comment, text, command = line.split('"', 2)
+        if command.strip():
+          func = book.add_link
+        else:
+          func = book.add_text
         if comment.startswith("color"):
-          book.add_link(text, command.strip(), comment.split(" ")[0].split("color")[1])
-        book.add_link(text, command.strip())
+          func(text, command.strip(), comment.split(" ")[0].split("color")[1])
+        else:
+          func(text, command.strip())
       except ValueError:
         if line.strip():
           sys.stderr.write("Warning: couldn't parse line %d: '%s'\n" % (i + 1, line.strip()))
