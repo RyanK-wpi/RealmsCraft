@@ -64,25 +64,31 @@ class Book(object):
 
   def new_page(self):
     self.page += 1
-    self.pages.append([])
+    self.pages.append([{"text": ""}])
     self.links = 0
-    
-  def reset_color(self):
-    self.pages[-1] += [{"text": "\\n\\n",
-                        "color": "reset"}]
 
-  def add_text(self, text, command, color="black"):
-    self.pages[-1].append({"text": text,
-                           "underlined": False,
-                           "color": color})
-    self.reset_color()
-
+  def maybe_new_page(self):
     self.links += 1
     if ((self.page == 0 and self.links == FIRST_PAGE_MAX_LINKS)
         or self.links % LATER_PAGE_MAX_LINKS == 0):
       self.new_page()
 
-  def add_link(self, text, command, color="blue"):
+    
+  def reset_color(self):
+    self.pages[-1] += [{"text": "\\n\\n",
+                        "color": "reset"}]
+
+  def add_text(self, text, color=None):
+    if not color:
+      color = "black"
+    self.pages[-1].append({"text": text,
+                           "underlined": False,
+                           "color": color})
+    self.reset_color()
+
+  def add_link(self, text, command, color=None):
+    if not color:
+      color = "blue"
     self.pages[-1].append({"text": text,
                            "underlined": True,
                            "color": color,
@@ -91,11 +97,6 @@ class Book(object):
                              "value": command
                            }})
     self.reset_color()
-    
-    self.links += 1
-    if ((self.page == 0 and self.links == FIRST_PAGE_MAX_LINKS)
-        or self.links % LATER_PAGE_MAX_LINKS == 0):
-      self.new_page()
   
   def generate(self):
     pages = self.pages[:]
@@ -118,15 +119,16 @@ def commandbook(filename):
         book.parse_config(line[1:])
         continue
       try:
+        book.maybe_new_page()
         comment, text, command = line.split('"', 2)
-        if command.strip():
-          func = book.add_link
-        else:
-          func = book.add_text
+
+        color = None
         if comment.startswith("color"):
-          func(text, command.strip(), comment.split(" ")[0].split("color")[1])
+          color = comment.split(" ")[0].split("color")[1]
+        if command.strip():
+          book.add_link(text, command.strip(), color)
         else:
-          func(text, command.strip())
+          book.add_text(text, color)
       except ValueError:
         if line.strip():
           sys.stderr.write("Warning: couldn't parse line %d: '%s'\n" % (i + 1, line.strip()))
