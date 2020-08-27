@@ -1,0 +1,71 @@
+: title=Marshal Commands; author=Aaron; spacing = 2
+"General Marshal Commands"
+"Toggle On Marshal Mode" /function rk:quest/marshal_mode
+"Teleport PCs to me" /teleport @a[gamemode=adventure] @s
+"Teleport PCs to tavern" /teleport @a[gamemode=adventure] @e[type=armor_stand,limit=1,name=Tavern]
+: pagebreak
+
+"Mob Summoning"
+"Summon Gi-ant Wolf" /summon minecraft:wolf ~ ~ ~ {Tags:[spawn_gi-ant]}
+"Summon Gi-ant Bear" /summon minecraft:polar_bear ~ ~ ~ {Tags:[spawn_gi-ant]}
+"Summon Gi-ant Spider" /summon minecraft:spider ~ ~ ~ {Tags:[spawn_gi-ant]}
+"Summon Fox" /summon minecraft:fox ~ ~ ~
+"Summon Rabbit" /summon minecraft:rabbit ~ ~ ~
+"Summon Cod" /summon minecraft:cod ~ ~ ~
+: pagebreak
+
+"Quest Specific Commands"
+"Generate quest shovel" /function rk:quest/gen_shovel
+"Generate quest pickaxe" /function rk:quest/gen_pickaxe
+"Generate quest TNT" /function rk:quest/gen_tnt
+"Generate quest flint and steel" /function rk:quest/gen_flint_and_steel
+: pagebreak
+"Complete Ritual and appear to PCs" /function rk:quest/ritual_completetion
+: pagebreak
+
+"Give closest PC 30s of..."
+"Strength" /effect give @a[gamemode=adventure,limit=1,sort=nearest] minecraft:strength 30
+"Speed" /effect give @a[gamemode=adventure,limit=1,sort=nearest] minecraft:speed 30
+"Instant Health" /effect give @a[gamemode=adventure,limit=1,sort=nearest] minecraft:instant_health 30
+"Levitation" /effect give @a[gamemode=adventure,limit=1,sort=nearest] minecraft:levitation 30
+"Haste" /effect give @a[gamemode=adventure,limit=1,sort=nearest] minecraft:haste 30
+: pagebreak
+
+"Give closest PC 60s of..."
+"Strength" /effect give @a[gamemode=adventure,limit=1,sort=nearest] minecraft:strength 60
+"Speed" /effect give @a[gamemode=adventure,limit=1,sort=nearest] minecraft:speed 60
+"Instant Health" /effect give @a[gamemode=adventure,limit=1,sort=nearest] minecraft:instant_health 60
+"Levitation" /effect give @a[gamemode=adventure,limit=1,sort=nearest] minecraft:levitation 60
+"Haste" /effect give @a[gamemode=adventure,limit=1,sort=nearest] minecraft:haste 60
+: pagebreak
+
+"Give PCs within 10 blocks 30s of..."
+"Strength" /effect give @a[gamemode=adventure,distance=..10] minecraft:strength 30
+"Speed" /effect give @a[gamemode=adventure,distance=..10] minecraft:speed 30
+"Instant Health" /effect give @a[gamemode=adventure,distance=..10] minecraft:instant_health 30
+"Levitation" /effect give @a[gamemode=adventure,distance=..10] minecraft:levitation 30
+"Haste" /effect give @a[gamemode=adventure,distance=..10] minecraft:haste 30
+: pagebreak
+
+"Give PCs within 10 blocks 60s of..."
+"Strength" /effect give @a[gamemode=adventure,distance=..10] minecraft:strength 60
+"Speed" /effect give @a[gamemode=adventure,distance=..10] minecraft:speed 60
+"Instant Health" /effect give @a[gamemode=adventure,distance=..10] minecraft:instant_health 60
+"Levitation" /effect give @a[gamemode=adventure,distance=..10] minecraft:levitation 60
+"Haste" /effect give @a[gamemode=adventure,distance=..10] minecraft:haste 60
+: pagebreak
+
+"Give ALL PCs 30s of..."
+"Strength" /effect give @a[gamemode=adventure] minecraft:strength 30
+"Speed" /effect give @a[gamemode=adventure] minecraft:speed 30
+"Instant Health" /effect give @a[gamemode=adventure] minecraft:instant_health 30
+"Levitation" /effect give @a[gamemode=adventure] minecraft:levitation 30
+"Haste" /effect give @a[gamemode=adventure] minecraft:haste 30
+: pagebreak
+
+"Give ALL PCs 60s of..."
+"Strength" /effect give @a[gamemode=adventure] minecraft:strength 60
+"Speed" /effect give @a[gamemode=adventure] minecraft:speed 60
+"Instant Health" /effect give @a[gamemode=adventure] minecraft:instant_health 60
+"Levitation" /effect give @a[gamemode=adventure] minecraft:levitation 60
+"Haste" /effect give @a[gamemode=adventure] minecraft:haste 60
