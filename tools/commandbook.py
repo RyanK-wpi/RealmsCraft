@@ -68,9 +68,8 @@ class Book(object):
     self.links = 0
 
   def maybe_new_page(self):
-    self.links += 1
     if ((self.page == 0 and self.links == FIRST_PAGE_MAX_LINKS)
-        or self.links % LATER_PAGE_MAX_LINKS == 0):
+        or self.links == LATER_PAGE_MAX_LINKS):
       self.new_page()
 
     
@@ -85,6 +84,7 @@ class Book(object):
                            "underlined": False,
                            "color": color})
     self.reset_color()
+    self.links += 1
 
   def add_link(self, text, command, color=None):
     if not color:
@@ -97,6 +97,7 @@ class Book(object):
                              "value": command
                            }})
     self.reset_color()
+    self.links += 1
   
   def generate(self):
     pages = self.pages[:]
