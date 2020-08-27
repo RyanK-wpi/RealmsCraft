@@ -1,5 +1,6 @@
 #Run as part of rk:main
 #For Gi-Questing 1
+#Clear out blocks from PC inventory
 clear @a[gamemode=adventure] sand
 clear @a[gamemode=adventure] sandstone
 clear @a[gamemode=adventure] sandstone_slab
