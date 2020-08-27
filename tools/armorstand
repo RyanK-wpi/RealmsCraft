@@ -1,0 +1,6 @@
+#! /bin/bash
+
+#/summon armor_stand ~ ~ ~ {Invisible:1b,Invulnerable:1b,PersistenceRequired:1b,NoGravity:1b,Marker:1b,CustomName:"{\"text\":\"testName\"}"}
+
+
+echo /summon armor_stand '~' '~' '~' {Invisible:1b,Invulnerable:1b,PersistenceRequired:1b,NoGravity:1b,Marker:1b,CustomName:"{\"text\":\"$*\"}"}
