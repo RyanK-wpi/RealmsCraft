@@ -29,6 +29,7 @@ execute as @e[tag=rage,tag=gi-ant] if score @s mobRageTime >= @s mobRageLength r
 #Additional logic for each mob type
 function rk:gi-ant/wolf/main
 function rk:gi-ant/bear/main
+function rk:gi-ant/spider/main
 
 #Remove spawn_gi-ant_ext tag from any newly spawned mob
 execute as @e[tag=spawn_gi-ant_ext] run tag @s remove spawn_gi-ant_ext
