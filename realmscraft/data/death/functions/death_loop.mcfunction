@@ -2,6 +2,7 @@
 #Author: Ryan Keller, Aug 2020
 
 #check when player dies
+execute as @a[scores={deaths=0}] at @s run spawnpoint @s ~ ~ ~
 execute as @a[scores={deaths=1..}] at @s run function death:on_death
 
 execute as @e[scores={corpsecreate=1..}] run scoreboard players remove @s corpsecreate 1
