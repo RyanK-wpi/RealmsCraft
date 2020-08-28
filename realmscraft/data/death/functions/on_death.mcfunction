@@ -17,7 +17,6 @@ execute at @s run summon armor_stand ~ ~0.5 ~ {Invisible:1b,Invulnerable:1b,Sile
 
 #teleport the player to the death box, unless they have deathwatch
 tp @s[tag=!deathwatch] 2 10 2
-spawnpoint @s 2 10 2
 gamemode spectator @s[tag=deathwatch]
 tp @s[tag=deathwatch] @e[name="death location",limit=1]
 
