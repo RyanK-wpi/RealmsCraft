@@ -4,7 +4,7 @@
 #check when player dies
 execute as @a[scores={deaths=0}] at @s run spawnpoint @s ~ ~ ~
 execute as @a[scores={deaths=1..}] at @s run function death:on_death
-execute as @a[tag=dead,tag=!deathwatch] unless @s[x=0,y=9,z=0,dx=4,dy=5,dz=4]
+execute as @a[tag=dead,tag=!deathwatch] unless entity @s[x=0,y=9,z=0,dx=4,dy=5,dz=4] run tp @s 2 10 2
 
 execute as @e[scores={corpsecreate=1..}] run scoreboard players remove @s corpsecreate 1
 execute as @e[type=zombie,scores={following=0,corpsecreate=1}] run function death:on_death_2
