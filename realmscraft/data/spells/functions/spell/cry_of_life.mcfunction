@@ -3,7 +3,7 @@
 #author: Ryan Keller, Aug 2020
 
 #revive corpses within 60 feet (approx 18.3m)
-tag @e[distance=..18.3,type=zombie,scores={deathLine=1..}] add revive
+execute at @s run tag @e[distance=..18.3,type=zombie,scores={deathLine=1..}] add revive
 execute as @e[tag=revive] run function death:revive
 
 #remove cry of life after use
