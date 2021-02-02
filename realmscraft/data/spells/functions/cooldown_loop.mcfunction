@@ -7,8 +7,8 @@ scoreboard players remove @e[scores={cooldownLight=1..}] cooldownLight 1
 scoreboard players remove @a[scores={cooldownMM=1..}] cooldownMM 1
 scoreboard players remove @a[scores={cooldownEnfeeble=1..}] cooldownEnfeeble 1
 scoreboard players remove @a[scores={cooldownLB=1..}] cooldownLB 1
-execute if entity @s[scores={cooldownLB=1..},nbt={Inventory:[{id:"minecraft:trident",tag:{display:{Name:"\"Lightning Bolt\""}}}]}] run clear @s minecraft:barrier{display:{Name:"\"Lightning Bolt on Cooldown\""}}
-execute if entity @s[scores={cooldownLB=1..},nbt={Inventory:[{id:"minecraft:trident",tag:{display:{Name:"\"Lightning Bolt\""}}}]}] run scoreboard players set @s cooldownLB 0
+execute as @a[scores={cooldownLB=1..},nbt={Inventory:[{id:"minecraft:trident",tag:{display:{Name:"\"Lightning Bolt\""}}}]}] run clear @s minecraft:barrier{display:{Name:"\"Lightning Bolt on Cooldown\""}}
+execute as @a[scores={cooldownLB=1..},nbt={Inventory:[{id:"minecraft:trident",tag:{display:{Name:"\"Lightning Bolt\""}}}]}] run scoreboard players set @s cooldownLB 0
 scoreboard players remove @a[scores={cooldownGuidance=1..}] cooldownGuidance 1
 scoreboard players remove @a[scores={cooldownVision=1..}] cooldownVision 1
 scoreboard players remove @a[scores={cooldownRD=1..,raisedeadcount=..4}] cooldownRD 1
