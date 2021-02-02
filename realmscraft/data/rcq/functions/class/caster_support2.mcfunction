@@ -9,4 +9,4 @@ tag @s add Support
 tag @s add Support2
 
 #gain spells
-function rcq:give/seerspells
+function rcq:give/supportspells
