@@ -9,7 +9,7 @@ execute at @s[tag=closest] run summon armor_stand ~ ~ ~ {Invisible:1b,Invulnerab
 scoreboard players set @s[tag=closest] following 1
 
 #destroy the temp bed, standing the corpse up
-execute as @e[limit=1,type=armor_stand,name="pickup corpse"] at @s run setblock ~ 1 ~ air
+execute as @e[limit=1,type=armor_stand,name="pickup corpse"] at @s run setblock ~ 0 ~ air
 
 #return the corpse to the marker and remove it
 tp @e[limit=1,type=armor_stand,name="pickup corpse"] ~ ~0.5 ~
