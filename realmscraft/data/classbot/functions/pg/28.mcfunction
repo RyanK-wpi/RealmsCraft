@@ -11,4 +11,4 @@ scoreboard players set @s classbot_pg -2
 tellraw @s ["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"]
 
 #Display Classbot page
-tellraw @s ["",{"text":"<ClassBot>: ","color":"gold"}},{"text":"You have chosen Skirmisher Seer! Have fun!","color":"blue"},{"text":"\n"},{"text":"[Change Class]","color":"dark_red","clickEvent":{"action":"run_command","value":"/trigger classbot_pg set -1"}}]
+tellraw @s [{"text":"<ClassBot>: ","color":"gold"},{"text":"You have chosen Skirmisher Seer! Have fun!","color":"blue"},{"text":"\n"},{"text":"[Change Class]","color":"dark_red","clickEvent":{"action":"run_command","value":"/trigger classbot_pg set -1"}}]

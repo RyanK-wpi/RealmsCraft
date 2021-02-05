@@ -3,7 +3,7 @@
 		"spells:spell_loop",
 		"spells:effects_loop",
 		"spells:cooldown_loop",
-		"death:death_loop"
-
+		"death:death_loop",
+		"classbot:loop"
 	]
 }
