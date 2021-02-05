@@ -2,12 +2,11 @@
 #Author: Ryan Keller, Feb 2021
 
 #gain general Skirmisher items
-function rcq:class/caster
+function classbot:class/caster
 
 #gain Tags
-tag @s add Support
-tag @s add Mage
+tag @s add Seer
+tag @s add Seer2
 
 #gain spells
-function rcq:give/supportspells
-function rcq:give/magespells
+function classbot:give/seerspells

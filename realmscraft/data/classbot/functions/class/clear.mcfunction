@@ -2,7 +2,7 @@
 #Author: Ryan Keller, Feb 2021
 
 #remove spells
-function rcq:clear_spells
+function classbot:clear_spells
 
 #remove items
 clear @s #spells:undroppable
@@ -18,3 +18,7 @@ tag @s remove Mage
 tag @s remove Mage2
 tag @s remove Seer
 tag @s remove Seer2
+
+#reset scores
+scoreboard players set @s weapon 0
+scoreboard players set @s class_select 0
