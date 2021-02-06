@@ -19,4 +19,4 @@ execute if entity @e[tag=enfeeble] run function spells:cooldown/enfeeble_being
 execute if entity @e[tag=enfeeble] run scoreboard players set @s click 0
 
 #if no entity found, move the ray forward and try again (until reaching a range limit)
-execute if block ~ ~ ~ #spells:spell_permeable as @s[scores={raycast=..120}] positioned ^ ^ ^0.1 run function spells:spell/enfeeble_being
+execute if block ~ ~ ~ #spells:spell_permeable as @s[scores={raycast=..170}] positioned ^ ^ ^0.1 run function spells:spell/enfeeble_being

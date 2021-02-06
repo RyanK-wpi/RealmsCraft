@@ -17,7 +17,7 @@ execute if entity @e[tag=revive] run scoreboard players set @s cooldownRD 60
 execute if entity @e[tag=revive] run function spells:cooldown/raise_dead
 execute if entity @e[tag=revive] run scoreboard players set @s click 0
 execute if entity @e[tag=revive] as @s run scoreboard players add @s raisedeadcount 1
-execute as @e[tag=revive] run function spells:func/revive
+execute as @e[tag=revive] at @s run function spells:func/revive
 
 #if no entity found, move the ray forward and try again (until reaching a range limit)
 execute if block ~ ~ ~ #spells:spell_permeable as @s[scores={raycast=..20}] positioned ^ ^ ^0.1 run function spells:spell/raise_dead

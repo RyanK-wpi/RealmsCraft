@@ -33,6 +33,7 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:shield"}},tag=!processed] run f
 execute as @e[type=item,nbt={Item:{id:"minecraft:stone_sword"}},tag=!processed] run function spells:func/restrict_drop
 execute as @e[type=item,nbt={Item:{id:"minecraft:stone_axe"}},tag=!processed] run function spells:func/restrict_drop
 execute as @e[type=item,nbt={Item:{id:"minecraft:bow"}},tag=!processed] run function spells:func/restrict_drop
+execute as @e[type=item,nbt={Item:{id:"minecraft:arrow"}},tag=!processed] run function spells:func/restrict_drop
 execute as @e[type=item,nbt={Item:{id:"minecraft:golden_sword"}},tag=!processed] run function spells:func/restrict_drop
 execute as @e[type=item,nbt={Item:{id:"minecraft:golden_axe"}},tag=!processed] run function spells:func/restrict_drop
 
