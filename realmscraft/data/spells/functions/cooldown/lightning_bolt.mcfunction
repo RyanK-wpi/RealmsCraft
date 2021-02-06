@@ -2,6 +2,7 @@
 #Author: Ryan Keller, Aug 2020
 
 #give cooldown item
+execute as @s[scores={cooldownLB=0},nbt=!{Inventory:[{id:"minecraft:trident",tag:{display:{Name:"\"Lightning Bolt\""}}}]}] at @s run tag @e[type=minecraft:trident,distance=..5] add lightning_bolt
 execute as @s[scores={cooldownLB=0},nbt=!{Inventory:[{id:"minecraft:trident",tag:{display:{Name:"\"Lightning Bolt\""}}}]}] run replaceitem entity @s weapon.mainhand minecraft:barrier{CustomModelData:1,display:{Name:"\"Lightning Bolt on Cooldown\"",Lore:["\"Spell Focus\""]}} 1
 scoreboard players set @s[scores={cooldownLB=0},nbt=!{Inventory:[{id:"minecraft:trident",tag:{display:{Name:"\"Lightning Bolt\""}}}]}] cooldownLB 1200
 
