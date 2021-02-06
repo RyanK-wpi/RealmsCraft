@@ -1,6 +1,7 @@
 {
 	"values": [
 		"rcq:setup",
-		"death:setup"
+		"death:setup",
+		"classbot:setup"
 	]
 }

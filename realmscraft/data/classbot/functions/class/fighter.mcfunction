@@ -2,7 +2,7 @@
 #Author: Ryan Keller, Feb 2021
 
 #clear previous class
-function rcq:class/clear
+function classbot:class/clear
 
 #Tags
 tag @s add Fighter
