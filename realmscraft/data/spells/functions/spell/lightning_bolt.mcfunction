@@ -19,6 +19,9 @@ execute at @e[type=minecraft:trident] run scoreboard players set @e[type=minecra
 
 #summon the lighting bolt
 execute at @e[type=minecraft:armor_stand,name=lightningMarker,scores={hasLightning=0}] run summon minecraft:lightning_bolt ~ ~ ~
+#damage any nearby entity
+execute at @e[type=minecraft:armor_stand,name=lightningMarker,scores={hasLightning=0}] positioned ~ ~-1 ~ run effect give @e[type=!#spells:undead,distance=..2] minecraft:instant_damage 1 2 true
+execute at @e[type=minecraft:armor_stand,name=lightningMarker,scores={hasLightning=0}] positioned ~ ~-1 ~ run effect give @e[type=#spells:undead,distance=..2] minecraft:instant_health 1 3 true
 kill @e[type=minecraft:armor_stand,name=lightningMarker,scores={hasLightning=0}]
 
 #give a cooldown to players who have cast lighting bolt

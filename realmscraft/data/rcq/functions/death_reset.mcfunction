@@ -5,5 +5,5 @@
 scoreboard players set @a deathLine 0
 kill @e[name="death location"]
 kill @e[tag=corpse]
-execute as @a[tag=dead] run function rcq:tp/tavern
+execute as @a[tag=dead] run function rcq:tp/quest
 tag @a[tag=dead] remove dead
