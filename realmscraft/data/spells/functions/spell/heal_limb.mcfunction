@@ -8,7 +8,8 @@ scoreboard players add @s raycast 1
 #particle barrier ~ ~ ~ 0 0 0 0.1 1
 
 #check for desired entity
-execute if entity @p[gamemode=adventure,distance=..1,scores={health=..19}] run scoreboard players set @s raycast 999999
+execute if entity @p[gamemode=adventure,distance=..1] run scoreboard players set @s raycast 999999
+#execute if entity @p[gamemode=adventure,distance=..1,scores={health=..19}] run scoreboard players set @s raycast 999999
 
 #spell effects
 execute as @s[scores={raycast=1000..}] positioned ^ ^ ^ run tag @p[gamemode=adventure] add heal
