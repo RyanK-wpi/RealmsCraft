@@ -4,6 +4,9 @@
 #disable class bot for player
 #classbot_pg=-2
 
+#enable players to access triggers
+scoreboard players enable @a classbot_pg
+
 #reset class selection
 execute as @a[scores={classbot_pg=-1}] run function classbot:reset
 
