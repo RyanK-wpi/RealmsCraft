@@ -3,7 +3,7 @@
 #author: Ryan Keller, Aug 2020
 
 #increment score for each tick the lightning bolt exists
-scoreboard players add @e[type=minecraft:trident] lightningTime 1
+scoreboard players add @e[type=minecraft:trident,tag=lightning_bolt] lightningTime 1
 
 #get rid of tridents that have hit their target
 kill @e[type=trident,nbt={DealtDamage:1b}]
