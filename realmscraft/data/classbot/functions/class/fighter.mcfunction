@@ -8,7 +8,7 @@ function classbot:class/clear
 tag @s add Fighter
 
 #apply 12 (6 hearts) health
-effect give @s minecraft:absorption 999999 4 true
+effect give @s minecraft:absorption 999999 2 true
 
 #gain Fighter Class Equiptment
 replaceitem entity @s armor.head minecraft:chainmail_helmet{Unbreakable:1} 1

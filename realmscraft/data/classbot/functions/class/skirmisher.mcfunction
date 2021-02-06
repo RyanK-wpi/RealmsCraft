@@ -8,8 +8,8 @@ function classbot:class/clear
 tag @s add Skirmisher
 
 #apply 12 (6 hearts) health, remove 6 (3 hearts)
-effect give @s minecraft:absorption 999999 4 true
-effect give @s minecraft:instant_damage 1 1 true
+effect give @s minecraft:absorption 999999 2 true
+effect give @s minecraft:instant_damage 1 0 true
 
 #gain Skirmisher Class Equiptment
 replaceitem entity @s armor.head minecraft:leather_helmet{Unbreakable:1} 1
