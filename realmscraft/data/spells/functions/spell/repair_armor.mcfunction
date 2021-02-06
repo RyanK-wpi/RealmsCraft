@@ -12,10 +12,10 @@ execute if entity @p[gamemode=adventure,distance=..1,tag=!Caster] run scoreboard
 execute as @s[scores={raycast=1000..}] positioned ^ ^ ^ run tag @p[gamemode=adventure] add repair
 execute as @s[scores={raycast=1000..}] positioned ^ ^ ^ run particle crit ~ ~1 ~ 0.1 0.1 0.1 0.1 20 force
 
-execute if entity @p[tag=repair] run execute as @a[tag=repair] run function spells:func/repair_armor
 execute if entity @p[tag=repair] run scoreboard players set @s cooldownRA 900
 execute if entity @p[tag=repair] run function spells:cooldown/repair_armor
 execute if entity @p[tag=repair] run scoreboard players set @s click 0
+execute if entity @p[tag=repair] run execute as @a[tag=repair] run function spells:func/repair_armor
 
 #if no entity found, move the ray forward and try again (until reaching a range limit)
 execute if block ~ ~ ~ #spells:spell_permeable as @s[scores={raycast=..20}] positioned ^ ^ ^0.1 run function spells:spell/repair_armor
