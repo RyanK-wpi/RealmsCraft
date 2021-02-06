@@ -3,7 +3,7 @@
 #author: Ryan Keller, Aug 2020
 
 #decalare a usage of Vision and who used it
-tellraw @a [{"color":"green","selector":"@s"},{"text":" has used Vision!","color":"green"}]
+tellraw @a[team=marshals] [{"color":"green","selector":"@s"},{"text":" has used Vision!","color":"green"}]
 
 #remove vision after use
 clear @s carrot_on_a_stick{display:{Name:"\"Vision\"",Lore:["\"Spell Focus\""]}} 1

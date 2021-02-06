@@ -3,7 +3,7 @@
 #author: Ryan Keller, Aug 2020
 
 #decalare a usage of Divine aid and who used it
-tellraw @a [{"color":"yellow","selector":"@s"},{"text":" has used Divine Aid","color":"yellow"}]
+tellraw @a[team=marshals] [{"color":"yellow","selector":"@s"},{"text":" has used Divine Aid","color":"yellow"}]
 
 #remove one use of divine aid
 clear @s carrot_on_a_stick{display:{Name:"\"Divine Aid\"",Lore:["\"Spell Focus\""]}} 1

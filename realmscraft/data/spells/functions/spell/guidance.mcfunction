@@ -3,7 +3,7 @@
 #author: Ryan Keller, Aug 2020
 
 #decalare a usage of Guidance and who used it
-tellraw @a [{"color":"red","selector":"@s"},{"text":" has used Guidance","color":"red"}]
+tellraw @a[team=marshals] [{"color":"red","selector":"@s"},{"text":" has used Guidance","color":"red"}]
 
 #give a cooldown
 scoreboard players set @s cooldownGuidance 3600
