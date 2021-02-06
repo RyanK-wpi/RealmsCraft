@@ -26,4 +26,4 @@ execute as @e[type=zombie,x=1,y=1,z=2,distance=..2] run function death:corpse_sc
 execute at @e[type=armor_stand,name="death location"] run tp @e[type=item,distance=..2] 1.5 3.75 3.5
 
 #if player has regeneration feat, begin 2 min corpse regen
-execute as @s[tag=regeneration,scores={cooldownRegen=0}] run function spells:spell/regeneration
+execute as @s[tag=regeneration,scores={cooldownRegen=0}] at @s run function spells:spell/regeneration
