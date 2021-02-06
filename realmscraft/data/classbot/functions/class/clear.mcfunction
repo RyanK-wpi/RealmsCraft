@@ -2,7 +2,7 @@
 #Author: Ryan Keller, Feb 2021
 
 #remove spells
-function classbot:clear_spells
+function rcq:clear_spells
 
 #remove items
 clear @s #spells:undroppable
