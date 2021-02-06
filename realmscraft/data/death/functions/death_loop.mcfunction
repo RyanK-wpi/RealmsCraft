@@ -13,7 +13,7 @@ execute as @e[type=zombie,scores={following=0,corpsecreate=1}] run function deat
 execute as @a[gamemode=spectator,tag=deathwatch] run function spells:spell/deathwatch
 
 #regenerate corpses with regeneration
-execute as @e[tag=regenerate] run function spells:func/regenerate
+execute as @e[tag=regenerate] at @s run function spells:func/regenerate
 
 #pick up a corpse
 execute as @e[type=zombie,tag=corpse,scores={following=0}] at @s positioned ~ ~ ~1 if entity @p[distance=..2,gamemode=adventure,tag=!boss,scores={grab=1}] unless entity @e[distance=..3.5,scores={following=1}] run function death:corpse/pickup
