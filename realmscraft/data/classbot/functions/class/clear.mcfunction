@@ -7,6 +7,9 @@ function rcq:clear_spells
 #remove items
 clear @s #spells:undroppable
 
+#remove hearts
+effect clear @s minecraft:absorption
+
 #remove tags
 tag @s remove Fighter
 tag @s remove Skirmisher

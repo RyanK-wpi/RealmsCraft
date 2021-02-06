@@ -7,11 +7,15 @@ function classbot:class/clear
 #Tags
 tag @s add Skirmisher
 
+#apply 12 (6 hearts) health, remove 6 (3 hearts)
+effect give @s minecraft:absorption 999999 2 true
+effect give @s minecraft:instant_damage 1 0 true
+
 #gain Skirmisher Class Equiptment
-replaceitem entity @s armor.head minecraft:leather_helmet 1
-replaceitem entity @s armor.chest minecraft:leather_chestplate 1
-replaceitem entity @s armor.legs minecraft:leather_leggings 1
-replaceitem entity @s armor.feet minecraft:leather_boots 1
+replaceitem entity @s armor.head minecraft:leather_helmet{Unbreakable:1} 1
+replaceitem entity @s armor.chest minecraft:leather_chestplate{Unbreakable:1} 1
+replaceitem entity @s armor.legs minecraft:leather_leggings{Unbreakable:1} 1
+replaceitem entity @s armor.feet minecraft:leather_boots{Unbreakable:1} 1
 replaceitem entity @s[scores={weapon=1}] hotbar.0 minecraft:stone_sword{Unbreakable:1} 1
 replaceitem entity @s[scores={weapon=2}] hotbar.0 minecraft:stone_axe{Unbreakable:1} 1
 replaceitem entity @s[scores={weapon=3}] hotbar.0 minecraft:shield{Unbreakable:1} 1
