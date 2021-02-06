@@ -5,7 +5,8 @@
 #classbot_pg=-2
 
 #enable players to access triggers
-scoreboard players enable @a classbot_pg
+execute as @a[gamemode=adventure,tag=!class_setup] run trigger classbot_pg add 0
+scoreboard players enable @a[tag=class_setup] classbot_pg
 
 #reset class selection
 execute as @a[scores={classbot_pg=-1}] run function classbot:reset
