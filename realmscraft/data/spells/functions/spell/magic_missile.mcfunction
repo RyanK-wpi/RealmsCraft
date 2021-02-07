@@ -14,8 +14,8 @@ scoreboard players set @e[type=minecraft:armor_stand,name=missileMarker] hasMiss
 execute at @e[type=minecraft:snowball] run scoreboard players set @e[type=minecraft:armor_stand,name=missileMarker,distance=..1] hasMissile 1
 
 #damage any nearby entity
-execute at @e[type=minecraft:armor_stand,name=missileMarker,scores={hasMissile=0}] positioned ~ ~-1 ~ run effect give @e[type=!#spells:undead,distance=..2] minecraft:instant_damage 1 0 true
-execute at @e[type=minecraft:armor_stand,name=missileMarker,scores={hasMissile=0}] positioned ~ ~-1 ~ run effect give @e[type=#spells:undead,distance=..2] minecraft:instant_health 1 1 true
+execute at @e[type=minecraft:armor_stand,name=missileMarker,scores={hasMissile=0}] positioned ~ ~-1 ~ run effect give @e[type=!#spells:undead,distance=..2.5] minecraft:instant_damage 1 0 true
+execute at @e[type=minecraft:armor_stand,name=missileMarker,scores={hasMissile=0}] positioned ~ ~-1 ~ run effect give @e[type=#spells:undead,distance=..2.5] minecraft:instant_health 1 1 true
 
 #clean up
 kill @e[type=minecraft:armor_stand,name=missileMarker,scores={hasMissile=0}]
